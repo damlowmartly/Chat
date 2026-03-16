@@ -10,9 +10,9 @@
 const LS_KEY_API  = 'gemini_api_key';
 const LS_KEY_CHAT = 'gemini_chat_history';
 
-// Gemini REST endpoint (gemini-1.5-flash — fast & free-tier friendly)
+// Gemini REST endpoint — gemini-2.0-flash is the current free-tier model (2025)
 const GEMINI_URL = key =>
-  `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`;
+  `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${key}`;
 
 // In-memory copy of chat messages: [{ role:'user'|'bot', text }]
 let chatHistory = [];
