@@ -1,0 +1,111 @@
+<!-- ============================================================
+     index.html
+     Save this file as: index.html
+     Place in the same folder as styles.css and app.js
+     Open index.html in any modern browser to run the chatbot.
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gemini Chat Studio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts: Syne (display) + DM Mono (mono/code) -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── APP SHELL ── -->
+  <div id="app">
+
+    <!-- ── SIDEBAR ── -->
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <span class="logo-mark">✦</span>
+        <span class="logo-text">Chat Studio</span>
+      </div>
+
+      <!-- API Key Panel -->
+      <div class="api-panel">
+        <label class="panel-label" for="api-key-input">Gemini API Key</label>
+        <div class="key-input-row">
+          <input
+            type="password"
+            id="api-key-input"
+            placeholder="AIza…"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button id="save-key-btn" title="Save key">✓</button>
+        </div>
+        <p id="key-status" class="key-status"></p>
+      </div>
+
+      <!-- Controls -->
+      <div class="sidebar-controls">
+        <button id="clear-chat-btn" class="ctrl-btn danger">⊗ Clear Chat</button>
+        <button id="clear-key-btn"  class="ctrl-btn">⌫ Remove Key</button>
+      </div>
+
+      <!-- Hint chips -->
+      <div class="hint-section">
+        <p class="panel-label">Try saying…</p>
+        <div class="hint-chips">
+          <button class="chip" data-hint="create a button for alarm">alarm button</button>
+          <button class="chip" data-hint="create a counter">counter</button>
+          <button class="chip" data-hint="create a todo list">todo list</button>
+          <button class="chip" data-hint="create an input form">input form</button>
+          <button class="chip" data-hint="add a color picker">color picker</button>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        Powered by Gemini 1.5 Flash
+      </div>
+    </aside>
+
+    <!-- ── MAIN COLUMN ── -->
+    <main id="main">
+
+      <!-- Mobile top bar -->
+      <div id="mobile-topbar">
+        <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+        <span class="logo-text">Chat Studio</span>
+        <span class="logo-mark">✦</span>
+      </div>
+
+      <!-- Chat window -->
+      <div id="chat-window">
+        <div id="messages"></div>
+      </div>
+
+      <!-- Dynamic Canvas (AI-built widgets land here) -->
+      <div id="canvas-area">
+        <p class="canvas-hint">AI-generated components will appear here ↓</p>
+        <div id="canvas"></div>
+      </div>
+
+      <!-- Input bar -->
+      <div id="input-bar">
+        <textarea
+          id="user-input"
+          placeholder="Ask anything or say 'create a counter'…"
+          rows="1"
+          autocomplete="off"
+        ></textarea>
+        <button id="send-btn" aria-label="Send">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
